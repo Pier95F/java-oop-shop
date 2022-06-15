@@ -4,11 +4,12 @@ import java.text.DecimalFormat;
 
 public class Prodotto {
 	
-	// Attributi
+	// Definisco gli attributi del prodotto
 	String marca, nome;
 	Float prezzoBase;
 	int IVA;
 	
+	// Importo il formato decimale per il prezzo
 	DecimalFormat df= new DecimalFormat ("#0.00€"); 
 
 	
@@ -23,11 +24,11 @@ public class Prodotto {
 	
 	
 	// Metodi
-	public float calcolaPrezzoTotale () {
+	public double calcolaPrezzoTotale () { // Imposto l'operazione per il calcolo del prezzo
 	return prezzoBase + ((prezzoBase/100) * IVA);
 	}
 	
-	public String toString() {
+	public String toString() { // Imposto la stringa che restituisce il prezzo finale del prodotto
 		return "Il prezzo finale del prodotto " + nome + "di marca " + marca + "è: " + df.format(calcolaPrezzoTotale());
 	}
 }
